@@ -51,3 +51,22 @@ footer .footer-row{border-top:3px solid var(--ink)}.footer-brand{font-family:Ari
 @media(max-width:640px){.wrap{width:calc(100% - 36px)}.site-header{min-height:84px}.wordmark{font-size:20px}nav{gap:5px 12px;font-size:9px}.nav-social{padding:5px 8px}.hero{padding-block:42px 38px;gap:22px}h1{font-size:clamp(66px,16vw,90px);letter-spacing:-5px}.intro{font-size:16px}.photo-hero{max-width:360px;margin:0 auto 14px;padding:12px}.photo-hero>a>img{max-height:360px}.photo-hero .art-note{right:-7px}.section{padding-block:50px}.section-heading>p{font-size:12px}.post-art{box-shadow:4px 5px 0 var(--ink)}.card-copy h3{font-size:22px}.research{padding-block:48px}.research-intro h2{font-size:clamp(41px,12vw,58px)}.follow{box-shadow:5px 5px 0 var(--ink)}.about-copy h2{font-size:33px}}
 @media(prefers-reduced-motion:reduce){.post-art{transition:none}.post-art:hover{transform:none}}
 @media(max-width:640px){.photo-hero .art-note{right:4px;top:-10px}}
+
+/* Purple is the brick body color; sunny yellow stays a small highlight. */
+:root{--paper:#fffdf5;--ink:#4d2a69;--muted:#645572;--rose:#74409b;--line:#644779;--sage:#eee5f4;--pink:#ffdc5a;--yellow:#e9ddf3}
+body{background-color:var(--paper);background-image:radial-gradient(#4d2a6912 1px,transparent 1px)}
+a:focus-visible{outline-color:var(--rose)}
+.brand-brick,.brand-brick i{background:var(--rose)}
+.hero-copy .eyebrow{background:var(--pink)}
+.hero-copy .tiny-dot{background:var(--rose)}
+.button:hover{background:#5e3080}
+.photo-hero{background:var(--yellow)}
+.ribbon{background:var(--sage);border-color:#b6a5c4}
+.ribbon span{color:var(--rose)}
+.post-art{background:var(--yellow)}
+.research-notes article:nth-child(2) .tag{background:var(--pink)}
+.research-notes article:nth-child(2){background:var(--sage)}
+.follow{background:var(--yellow)}
+.follow-spark,.handwritten span{color:var(--rose)}
+.portrait-label{background:var(--pink)}
+@media(max-width:640px){.hero{grid-template-columns:minmax(0,1fr)}.hero-copy,.hero-art{width:100%;min-width:0}.photo-hero{width:calc(100% - 18px);max-width:360px}.photo-hero>a{width:100%;max-width:none}.photo-hero .art-note{top:-14px;right:3px;max-width:185px;font-size:10px}}

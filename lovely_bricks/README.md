@@ -30,4 +30,4 @@ To add or change a selected post, update both the static card in `index.html` an
 
 ## Visual direction
 
-The visual identity uses bold system sans-serif lettering, primary brick colors, crisp black outlines, and actual photos from the public Instagram grid. No stock imagery, generated photo backgrounds, remote fonts, template, or Bootstrap are loaded.
+The visual identity uses bold system sans-serif lettering, purple bricks, small yellow accents, crisp purple outlines, and actual photos from the public Instagram grid. No stock imagery, generated photo backgrounds, remote fonts, template, or Bootstrap are loaded.
