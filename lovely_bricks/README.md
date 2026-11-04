@@ -10,7 +10,7 @@ GitHub Pages publishes the repository's `main` branch from `/`. This folder is s
 
 - `index.html`: page copy, navigation, Instagram links, and portfolio sections.
 - `style.css`: responsive layout, colors, and typography, scoped to this page by its separate stylesheet.
-- `assets/*.svg`: original brick illustrations and favicon. No external image or font services are used.
+- `assets/*.svg`: original brick illustrations and favicon. No external image or font services are used. The design uses custom CSS rather than a downloaded theme or Bootstrap.
 - The builder portrait reuses `../images/illustrations/sigfig.png` from the existing website.
 
 The collection uses real Instagram thumbnails with links to the original posts. Use relative image paths so they work at the subdirectory URL.
@@ -27,3 +27,7 @@ Research references:
 - https://mondheera.website/#other — LEGO MASTERS JAPAN 2023 and Japan Brickfest background. The current professional title follows the personal website rather than the older Instagram bio.
 
 To add or change a selected post, update both the static card in `index.html` and its record in `data/instagram.json`. The original SVG artwork remains available in `assets/`; the homepage now features photography.
+
+## Visual direction
+
+The visual identity uses bold system sans-serif lettering, primary brick colors, crisp black outlines, and actual photos from the public Instagram grid. No stock imagery, generated photo backgrounds, remote fonts, template, or Bootstrap are loaded.
