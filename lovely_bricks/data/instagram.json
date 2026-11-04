@@ -1,0 +1,73 @@
+{
+  "profile": "https://www.instagram.com/lovely_bricks/",
+  "retrieved": "2026-11-04",
+  "scope": "Six public profile-grid previews; full captions and carousel contents require Instagram login. Titles and summaries are editorial descriptions of the visible images, not quotations of post captions. This is a curated snapshot, not an automatically updating feed.",
+  "posts": [
+    {
+      "id": "DfOGLxWISM4",
+      "type": "p",
+      "date": "2026-11-01",
+      "title": "At the building table",
+      "summary": "A peek at the LEGO sets on my Instagram.",
+      "alt": "LEGO boxes featuring Star Wars, a windmill, and Wednesday.",
+      "image": "assets/instagram-DfOGLxWISM4.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/p/DfOGLxWISM4/",
+      "color": "sage"
+    },
+    {
+      "id": "DfJb5ARGxS1",
+      "type": "p",
+      "date": "2026-10-30",
+      "title": "A little Halloween spirit",
+      "summary": "A brick-built skeleton among pumpkins and Halloween decorations.",
+      "alt": "White brick-built skeleton in a Halloween display with pumpkins and treats.",
+      "image": "assets/instagram-DfJb5ARGxS1.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/p/DfJb5ARGxS1/",
+      "color": "pink"
+    },
+    {
+      "id": "DeeColwRT7U",
+      "type": "reel",
+      "date": "2026-10-14",
+      "title": "BricksTory, on show",
+      "summary": "An Instagram reel introducing my interactive BricksTory showcase.",
+      "alt": "Blue BricksTory reel cover introducing an interactive showcase.",
+      "image": "assets/instagram-DeeColwRT7U.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/reel/DeeColwRT7U/",
+      "color": "yellow"
+    },
+    {
+      "id": "Debw4A0E_Jr",
+      "type": "p",
+      "date": "2026-10-13",
+      "title": "A tiny dancer in Paris",
+      "summary": "My minifigure outside Repetto, with dancers in the window.",
+      "alt": "Black-haired minifigure in a pink tutu outside a Repetto shop window.",
+      "image": "assets/instagram-Debw4A0E_Jr.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/p/Debw4A0E_Jr/",
+      "color": "pink"
+    },
+    {
+      "id": "DeMsyJhCL8R",
+      "type": "p",
+      "date": "2026-10-07",
+      "title": "Small figure, big world",
+      "summary": "A minifigure moment with the Eiffel Tower in the distance.",
+      "alt": "Minifigure in a pink tutu with the Eiffel Tower behind her at sunset.",
+      "image": "assets/instagram-DeMsyJhCL8R.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/p/DeMsyJhCL8R/",
+      "color": "sage"
+    },
+    {
+      "id": "DeJCUi1I-cL",
+      "type": "reel",
+      "date": "2026-10-05",
+      "title": "Along for the adventure",
+      "summary": "A little minifigure cameo from my Instagram reels.",
+      "alt": "Minifigure in a pink tutu in front of a blurred blue display.",
+      "image": "assets/instagram-DeJCUi1I-cL.jpg",
+      "url": "https://www.instagram.com/lovely_bricks/reel/DeJCUi1I-cL/",
+      "color": "yellow"
+    }
+  ]
+}
