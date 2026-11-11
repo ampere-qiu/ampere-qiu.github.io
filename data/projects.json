@@ -8,8 +8,8 @@
       "tags": ["AI in Education", "EFL", "Learning through Play"],
       "visualLabel": "EFL × AI",
       "visualStyle": "efl",
-      "href": "research.html",
-      "linkLabel": "Research overview"
+      "href": "projects/efl-education-ai.html",
+      "linkLabel": "Explore this project"
     },
     {
       "id": "facilitator-agent",
@@ -19,8 +19,8 @@
       "tags": ["Human–AI Collaboration", "Multilingual Communication", "CSCW"],
       "visualLabel": "People ↔ AI",
       "visualStyle": "agent",
-      "href": "research.html",
-      "linkLabel": "Research overview"
+      "href": "projects/facilitator-agent.html",
+      "linkLabel": "Explore this project"
     },
     {
       "id": "intercultural-collaboration",
@@ -30,8 +30,8 @@
       "tags": ["Intercultural Collaboration", "Human–AI Collaboration", "Communication"],
       "visualLabel": "Across cultures",
       "visualStyle": "culture",
-      "href": "research.html",
-      "linkLabel": "Research overview"
+      "href": "projects/intercultural-collaboration.html",
+      "linkLabel": "Explore this project"
     },
     {
       "id": "ai-play-brickstory",
@@ -41,7 +41,7 @@
       "tags": ["AI & Play", "Entertainment Computing", "Creative Learning"],
       "visualLabel": "Build → imagine",
       "visualStyle": "brickstory",
-      "href": "projects.html#brickstory",
+      "href": "projects/brickstory.html",
       "linkLabel": "Explore BricksTory"
     },
     {
@@ -53,8 +53,8 @@
       "visualLabel": "Lovely Bricks",
       "visualStyle": "lego",
       "image": "lovely_bricks/assets/instagram-DeJCUi1I-cL.jpg",
-      "href": "lovely_bricks/",
-      "linkLabel": "Visit Lovely Bricks"
+      "href": "projects/lego-portfolio.html",
+      "linkLabel": "Explore this project"
     }
   ]
 }
