@@ -118,6 +118,53 @@
     instance.pause();
   }
 
+  function renderProjectCatalog(projects) {
+    const catalog = document.getElementById("projectCatalog");
+    if (!catalog) return;
+    catalog.replaceChildren();
+    projects.forEach((project) => {
+      const column = document.createElement("div");
+      column.className = "col-md-6";
+      const card = document.createElement("article");
+      card.className = "project-card h-100";
+      card.id = project.id;
+      const visual = document.createElement("div");
+      visual.className = `project-card-visual project-visual-${project.visualStyle || "default"}`;
+      if (project.image) {
+        const image = document.createElement("img");
+        image.src = project.image;
+        image.alt = project.imageAlt || project.title;
+        image.loading = "lazy";
+        visual.append(image);
+      } else {
+        visual.append(textNode("span", "project-visual-label", project.visualLabel || project.title));
+      }
+      const body = document.createElement("div");
+      body.className = "project-card-body";
+      body.append(
+        textNode("p", "project-slide-category", project.category),
+        textNode("h2", "h4 project-slide-title", project.title),
+        textNode("p", "project-slide-summary", project.summary)
+      );
+      const tags = document.createElement("ul");
+      tags.className = "project-tags";
+      (project.tags || []).forEach((tag) => tags.append(textNode("li", "badge bg-white text-dark border", tag)));
+      body.append(tags);
+      const link = document.createElement("a");
+      link.className = "btn btn-outline-primary hover-effect";
+      link.href = project.href || "#";
+      link.textContent = project.linkLabel || "Explore project";
+      if (/^https?:\/\//i.test(link.href)) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      body.append(link);
+      card.append(visual, body);
+      column.append(card);
+      catalog.append(column);
+    });
+  }
+
   let publications = [];
 
   function setOptions(select, values, firstLabel) {
@@ -202,7 +249,11 @@
   });
 
   loadJson("./data/projects.json")
-    .then((data) => renderProjects(Array.isArray(data.projects) ? data.projects : []))
+    .then((data) => {
+      const projects = Array.isArray(data.projects) ? data.projects : [];
+      renderProjects(projects);
+      renderProjectCatalog(projects);
+    })
     .catch((error) => {
       if (projectSlides) projectSlides.replaceChildren(textNode("div", "carousel-item active project-loading text-center p-5", "Project highlights are temporarily unavailable."));
       console.error(error);

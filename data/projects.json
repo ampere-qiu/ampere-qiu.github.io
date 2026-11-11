@@ -8,8 +8,8 @@
       "tags": ["AI in Education", "EFL", "Learning through Play"],
       "visualLabel": "EFL × AI",
       "visualStyle": "efl",
-      "href": "#pub",
-      "linkLabel": "Related publications"
+      "href": "research.html",
+      "linkLabel": "Research overview"
     },
     {
       "id": "facilitator-agent",
@@ -19,8 +19,8 @@
       "tags": ["Human–AI Collaboration", "Multilingual Communication", "CSCW"],
       "visualLabel": "People ↔ AI",
       "visualStyle": "agent",
-      "href": "#pub",
-      "linkLabel": "Related publications"
+      "href": "research.html",
+      "linkLabel": "Research overview"
     },
     {
       "id": "intercultural-collaboration",
@@ -30,8 +30,8 @@
       "tags": ["Intercultural Collaboration", "Human–AI Collaboration", "Communication"],
       "visualLabel": "Across cultures",
       "visualStyle": "culture",
-      "href": "#research",
-      "linkLabel": "Research themes"
+      "href": "research.html",
+      "linkLabel": "Research overview"
     },
     {
       "id": "ai-play-brickstory",
@@ -41,8 +41,8 @@
       "tags": ["AI & Play", "Entertainment Computing", "Creative Learning"],
       "visualLabel": "Build → imagine",
       "visualStyle": "brickstory",
-      "href": "#pub",
-      "linkLabel": "Related publications"
+      "href": "projects.html#brickstory",
+      "linkLabel": "Explore BricksTory"
     },
     {
       "id": "lego-portfolio",

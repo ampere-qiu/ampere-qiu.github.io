@@ -256,6 +256,101 @@ footer a:not(.nav-link) {
   scroll-margin-top: 5.5rem;
 }
 
+.page-hero {
+  padding: clamp(2.5rem, 7vw, 5rem) 1rem;
+  background: #f4f6f8;
+  border-bottom: 1px solid #e4e7eb;
+}
+
+.brand-short {
+  display: none;
+}
+
+.page-hero .container-narrow {
+  max-width: 1024px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+}
+
+.navbar .nav-link.active {
+  color: #604486 !important;
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.3fr) 1fr;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid #e4e7eb;
+}
+
+.cv-row:first-of-type {
+  border-top: 1px solid #e4e7eb;
+}
+
+.cv-row > span {
+  font-weight: 800;
+}
+
+.cv-row p {
+  margin: 0;
+}
+
+.collaboration-panel {
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: #f4f6f8;
+  border-left: 5px solid var(--bs-primary);
+}
+
+.project-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4e7eb;
+  border-radius: 0.25rem;
+}
+
+.project-card-visual {
+  min-height: 185px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+.project-card-visual .project-visual-label {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+.project-card-visual img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-card-body {
+  padding: 1.4rem;
+}
+
+.project-card-body .project-slide-title {
+  margin-top: 0.45rem;
+}
+
+.project-card-body .project-tags {
+  min-height: 2rem;
+}
+
+.brickstory-panel {
+  padding: clamp(1.5rem, 5vw, 3.25rem);
+  background: #f3e9d8;
+  border-left: 5px solid #604486;
+}
+
+.brickstory-copy {
+  max-width: 780px;
+}
+
 .quick-links {
   border-top: 1px solid #e4e7eb;
   border-bottom: 1px solid #e4e7eb;
@@ -481,6 +576,11 @@ footer a:not(.nav-link) {
 }
 
 @media (max-width: 767.98px) {
+  .cv-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
   .project-slide-panel {
     min-height: 0;
   }
@@ -497,6 +597,20 @@ footer a:not(.nav-link) {
 
   .quick-link {
     font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-title {
+    font-size: 1.35rem;
+  }
+
+  .brand-full {
+    display: none;
+  }
+
+  .brand-short {
+    display: inline;
   }
 }
 
