@@ -102,7 +102,7 @@
     });
 
     projectCount.textContent = `1 / ${projects.length}`;
-    const instance = bootstrap.Carousel.getOrCreateInstance(projectCarousel, {
+    const instance = new bootstrap.Carousel(projectCarousel, {
       interval: false,
       ride: false,
       keyboard: true,
