@@ -119,13 +119,13 @@
     instance.pause();
   }
 
-  function renderProjectCatalog(projects) {
-    const catalog = document.getElementById("projectCatalog");
+  function renderProjectCatalog(projects, catalogId = "projectCatalog") {
+    const catalog = document.getElementById(catalogId);
     if (!catalog) return;
     catalog.replaceChildren();
     projects.forEach((project) => {
       const column = document.createElement("div");
-      column.className = "col-md-6";
+      column.className = catalogId === "nonResearchCatalog" ? "col-lg-4 col-md-6" : "col-md-6";
       const card = document.createElement("article");
       card.className = "project-card h-100";
       card.id = project.id;
@@ -255,7 +255,12 @@
     .then((data) => {
       const projects = Array.isArray(data.projects) ? data.projects : [];
       renderProjects(projects);
-      renderProjectCatalog(projects);
+      renderProjectCatalog(projects.filter((project) => project.projectType !== "non-research"));
+      const nonResearchProjects = [
+        ...(Array.isArray(data.nonResearchProjects) ? data.nonResearchProjects : []),
+        ...projects.filter((project) => project.projectType === "non-research")
+      ];
+      renderProjectCatalog(nonResearchProjects, "nonResearchCatalog");
     })
     .catch((error) => {
       if (projectSlides) projectSlides.replaceChildren(textNode("div", "carousel-item active project-loading text-center p-5", "Project highlights are temporarily unavailable."));

@@ -730,3 +730,8 @@ footer a:not(.nav-link) {
 .project-all-publications { font-weight: 800; }
 /* The LEGO plate accent is misplaced beside the BricksTory headings, so omit it on that page. */
 .brickstory-detail .marker::after { content: none; }
+
+/* Independent, non-research project collection */
+.nonresearch-section { background: #faf9fb; }
+.project-visual-unwind { background: #e6ecdf; }
+.project-visual-with-me { background: #fff0dc; }

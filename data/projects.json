@@ -13,7 +13,8 @@
       "visualLabel": "EFL × AI",
       "visualStyle": "efl",
       "href": "/projects/efl-education-ai.html",
-      "linkLabel": "Explore EFL project"
+      "linkLabel": "Explore EFL project",
+      "projectType": "research"
     },
     {
       "id": "facilitator-agent",
@@ -28,7 +29,8 @@
       "visualLabel": "People ↔ AI",
       "visualStyle": "agent",
       "href": "/projects/facilitator-agent.html",
-      "linkLabel": "Explore this project"
+      "linkLabel": "Explore this project",
+      "projectType": "research"
     },
     {
       "id": "intercultural-collaboration",
@@ -43,7 +45,8 @@
       "visualLabel": "Across cultures",
       "visualStyle": "culture",
       "href": "/projects/intercultural-collaboration.html",
-      "linkLabel": "Explore this project"
+      "linkLabel": "Explore this project",
+      "projectType": "research"
     },
     {
       "id": "ai-play-brickstory",
@@ -58,13 +61,14 @@
       "visualLabel": "Build → imagine",
       "visualStyle": "brickstory",
       "href": "/projects/brickstory.html",
-      "linkLabel": "Explore BricksTory"
+      "linkLabel": "Explore BricksTory",
+      "projectType": "research"
     },
     {
       "id": "lego-portfolio",
       "title": "LEGO Portfolio",
-      "category": "Hobby · Creative building",
-      "summary": "Selected LEGO builds, experiments, and playful creations from Lovely Bricks.",
+      "category": "Non-research · Creative building",
+      "summary": "LEGO builds, playful photos, and small making experiments from Lovely Bricks.",
       "tags": [
         "LEGO",
         "Creative Play",
@@ -74,7 +78,43 @@
       "visualStyle": "lego",
       "image": "lovely_bricks/assets/instagram-DeJCUi1I-cL.jpg",
       "href": "/projects/lego-portfolio.html",
-      "linkLabel": "Explore this project"
+      "linkLabel": "Explore Lovely Bricks",
+      "projectType": "non-research",
+      "imageAlt": "A Lovely Bricks LEGO creation"
+    }
+  ],
+  "nonResearchProjects": [
+    {
+      "id": "little-unwind",
+      "title": "Little Unwind",
+      "category": "Non-research · Wellbeing",
+      "summary": "A gentle space to pause, create, and reconnect through a personal deck of small activities.",
+      "tags": [
+        "Wellbeing",
+        "Creative prompts",
+        "English · 中文 · 日本語 · ไทย"
+      ],
+      "visualStyle": "unwind",
+      "image": "images/projects/little-unwind-preview.jpg",
+      "imageAlt": "Little Unwind homepage with its colorful card deck",
+      "href": "https://app.mondheera.website",
+      "linkLabel": "Visit Little Unwind"
+    },
+    {
+      "id": "with-me",
+      "title": "With Me",
+      "category": "Non-research · Conversation practice",
+      "summary": "A low-pressure space to practise what to say when someone you care about is struggling with depression.",
+      "tags": [
+        "Conversation practice",
+        "Empathy",
+        "Interactive story"
+      ],
+      "visualStyle": "with-me",
+      "image": "images/projects/with-me-preview.jpg",
+      "imageAlt": "With Me conversation practice app showing two friends talking",
+      "href": "https://with-you-practice-ampere.ampere-scout.chatgpt.site/",
+      "linkLabel": "Visit With Me"
     }
   ]
 }
