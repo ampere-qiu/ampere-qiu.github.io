@@ -714,3 +714,19 @@ footer a:not(.nav-link) {
 .project-detail-work h2 { margin-bottom: 0.8rem; }
 .project-detail-work p { margin-bottom: 0; }
 .project-detail-links { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+
+/* Project subprojects and selected papers */
+.project-subprojects { margin: 2.5rem 0; }
+.project-subprojects > h2 { margin-bottom: 1.15rem; }
+.project-subproject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+.project-subproject { padding: 1.25rem 1.35rem; background: #f7f5f9; border-top: 3px solid #8a7b38; }
+.project-subproject h3 { font-size: 1.05rem; font-weight: 800; }
+.project-subproject p { margin: 0; line-height: 1.7; }
+.project-publications { list-style: none; padding: 0; margin: 1rem 0 1.25rem; }
+.project-publications li { padding: 0.85rem 0; border-bottom: 1px solid #e4e7eb; }
+.project-publications li:first-child { border-top: 1px solid #e4e7eb; }
+.project-publications a { display: block; font-weight: 800; }
+.project-publications span { display: block; margin-top: 0.2rem; color: #6c757d; font-size: 0.9rem; }
+.project-all-publications { font-weight: 800; }
+/* The LEGO plate accent is misplaced beside the BricksTory headings, so omit it on that page. */
+.brickstory-detail .marker::after { content: none; }

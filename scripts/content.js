@@ -230,6 +230,8 @@
     try {
       const data = await loadJson("./data/publications.json");
       publications = Array.isArray(data.publications) ? data.publications : [];
+      const initialQuery = new URLSearchParams(window.location.search).get("search");
+      if (searchInput && initialQuery) searchInput.value = initialQuery;
       const years = [...new Set(publications.map((item) => String(item.year)))].sort((a, b) => Number(b) - Number(a));
       const types = [...new Set(publications.map((item) => item.type))].sort();
       const tags = [...new Set(publications.flatMap((item) => item.tags || []))].sort();
