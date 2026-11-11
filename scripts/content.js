@@ -81,6 +81,7 @@
         image.alt = project.imageAlt || project.title;
         image.loading = "lazy";
         art.append(image);
+        art.classList.add("project-visual-with-image");
       } else {
         art.append(textNode("span", "project-visual-label", project.visualLabel || project.title));
       }
