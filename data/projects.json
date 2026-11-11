@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "id": "efl-education-ai",
+      "title": "EFL Education with AI",
+      "category": "Research · Education",
+      "summary": "Designing game-like, AI-supported activities that give English learners new ways to practise speaking and vocabulary.",
+      "tags": ["AI in Education", "EFL", "Learning through Play"],
+      "visualLabel": "EFL × AI",
+      "visualStyle": "efl",
+      "href": "#pub",
+      "linkLabel": "Related publications"
+    },
+    {
+      "id": "facilitator-agent",
+      "title": "Facilitator Agent",
+      "category": "Research · Human–AI collaboration",
+      "summary": "Exploring how AI agents can support understanding and participation in multilingual group discussions.",
+      "tags": ["Human–AI Collaboration", "Multilingual Communication", "CSCW"],
+      "visualLabel": "People ↔ AI",
+      "visualStyle": "agent",
+      "href": "#pub",
+      "linkLabel": "Related publications"
+    },
+    {
+      "id": "intercultural-collaboration",
+      "title": "AI for Intercultural Collaboration",
+      "category": "Research · Communication",
+      "summary": "Studying interactive systems that help people communicate across language and cultural differences.",
+      "tags": ["Intercultural Collaboration", "Human–AI Collaboration", "Communication"],
+      "visualLabel": "Across cultures",
+      "visualStyle": "culture",
+      "href": "#research",
+      "linkLabel": "Research themes"
+    },
+    {
+      "id": "ai-play-brickstory",
+      "title": "AI & Play · BricksTory",
+      "category": "Research · Entertainment Computing",
+      "summary": "Exploring playful ways to turn hands-on brick building into stories with AI support.",
+      "tags": ["AI & Play", "Entertainment Computing", "Creative Learning"],
+      "visualLabel": "Build → imagine",
+      "visualStyle": "brickstory",
+      "href": "#pub",
+      "linkLabel": "Related publications"
+    },
+    {
+      "id": "lego-portfolio",
+      "title": "LEGO Portfolio",
+      "category": "Hobby · Creative building",
+      "summary": "Selected LEGO builds, experiments, and playful creations from Lovely Bricks.",
+      "tags": ["LEGO", "Creative Play", "Lovely Bricks"],
+      "visualLabel": "Lovely Bricks",
+      "visualStyle": "lego",
+      "image": "lovely_bricks/assets/instagram-DeJCUi1I-cL.jpg",
+      "href": "lovely_bricks/",
+      "linkLabel": "Visit Lovely Bricks"
+    }
+  ]
+}
