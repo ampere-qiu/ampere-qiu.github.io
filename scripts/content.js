@@ -125,7 +125,7 @@
     catalog.replaceChildren();
     projects.forEach((project) => {
       const column = document.createElement("div");
-      column.className = catalogId === "nonResearchCatalog" ? "col-lg-4 col-md-6" : "col-md-6";
+      column.className = ["nonResearchCatalog", "homeNonResearchCatalog"].includes(catalogId) ? "col-lg-4 col-md-6" : "col-md-6";
       const card = document.createElement("article");
       card.className = "project-card h-100";
       card.id = project.id;
@@ -261,6 +261,7 @@
         ...projects.filter((project) => project.projectType === "non-research")
       ];
       renderProjectCatalog(nonResearchProjects, "nonResearchCatalog");
+      renderProjectCatalog(nonResearchProjects, "homeNonResearchCatalog");
     })
     .catch((error) => {
       if (projectSlides) projectSlides.replaceChildren(textNode("div", "carousel-item active project-loading text-center p-5", "Project highlights are temporarily unavailable."));

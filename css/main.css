@@ -316,49 +316,31 @@ footer a:not(.nav-link) {
   border-left: 5px solid var(--bs-primary);
 }
 
-.contact-panel {
-  overflow: hidden;
-  border-radius: 1.1rem;
-  background: linear-gradient(135deg, #f5f1fa 0%, #fbf9fd 54%, #fff9e9 100%);
-  border: 1px solid #e8e0ef;
-  box-shadow: 0 1rem 2.5rem rgba(49, 34, 70, 0.08);
-}
+.home-nonresearch { padding-top: 0 !important; }
+.home-nonresearch-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin: 0 auto 1rem; max-width: 920px; }
+.home-nonresearch-heading > div > p { color: #6c757d; font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.home-nonresearch-heading > a { color: #343a40; font-size: .9rem; font-weight: 700; white-space: nowrap; }
+#homeNonResearchCatalog { max-width: 920px; margin: 0 auto; }
+#homeNonResearchCatalog .project-card { display: grid; grid-template-columns: 110px minmax(0, 1fr); min-height: 132px; border: 1px solid #dee1e4; border-radius: .2rem; }
+#homeNonResearchCatalog .project-card-visual { min-height: 0; height: 100%; padding: 0; }
+#homeNonResearchCatalog .project-card-visual img { height: 100%; min-height: 132px; object-fit: cover; }
+#homeNonResearchCatalog .project-card-body { min-width: 0; padding: .85rem 1rem; }
+#homeNonResearchCatalog .project-slide-category { margin-bottom: .25rem; font-size: .66rem; }
+#homeNonResearchCatalog .project-card-body .project-slide-title { margin: 0 0 .3rem; font-size: 1rem; }
+#homeNonResearchCatalog .project-card-body .project-slide-summary { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin: 0 0 .55rem; color: #62676d; font-size: .82rem; line-height: 1.4; }
+#homeNonResearchCatalog .project-tags { display: none; }
+#homeNonResearchCatalog .project-card-body .btn { padding: 0; border: 0; color: #30343a; font-size: .78rem; font-weight: 800; text-decoration: underline; text-decoration-color: #f0ca44; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+#homeNonResearchCatalog .project-card-body .btn:hover { color: #111; background: transparent; }
 
-.contact-heading {
-  padding: clamp(1.5rem, 4vw, 2.6rem) clamp(1.5rem, 5vw, 3.5rem) 1.25rem;
-}
-
-.contact-heading > p:first-child {
-  color: #735a91;
-  font-size: .78rem;
-  font-weight: 800;
-  letter-spacing: .13em;
-}
-
-.contact-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: #e8e0ef;
-}
-
-.contact-option {
-  display: flex;
-  gap: 1rem;
-  padding: clamp(1.3rem, 3.5vw, 2.25rem);
-  background: rgba(255, 255, 255, .88);
-}
-
-.contact-option-bricks { background: rgba(255, 252, 241, .94); }
-.contact-icon { color: #604486; font-size: 1.35rem; padding-top: .1rem; }
-.contact-option-bricks .contact-icon { color: #9b7517; }
-.contact-option h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: .5rem; }
-.contact-option p { color: #62616a; line-height: 1.65; margin-bottom: .8rem; }
-.contact-link { color: #604486; font-weight: 800; overflow-wrap: anywhere; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.contact-option-bricks .contact-link { color: #725514; }
+.contact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; padding: 1.5rem 0; border-top: 1px solid #d9dcdf; border-bottom: 1px solid #d9dcdf; }
+.contact-item { position: relative; padding: .4rem 1rem .4rem 1.25rem; border-left: 4px solid #f0ca44; }
+.contact-label { color: #6c757d; font-size: .74rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.contact-item p { margin: .55rem 0 .7rem; color: #555b61; line-height: 1.6; }
+.contact-item a { color: #212529; font-weight: 800; text-decoration: underline; text-decoration-color: #f0ca44; text-decoration-thickness: 2px; text-underline-offset: 3px; overflow-wrap: anywhere; }
 
 @media (max-width: 767.98px) {
-  .contact-options { grid-template-columns: 1fr; }
+  .contact-list { grid-template-columns: 1fr; gap: 1.25rem; }
+  #homeNonResearchCatalog .project-card { grid-template-columns: 92px minmax(0, 1fr); }
 }
 
 .project-card {
