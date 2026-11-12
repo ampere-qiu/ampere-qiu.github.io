@@ -254,7 +254,7 @@
   loadJson("./data/projects.json")
     .then((data) => {
       const projects = Array.isArray(data.projects) ? data.projects : [];
-      renderProjects(projects);
+      renderProjects(projects.filter((project) => project.projectType !== "non-research"));
       renderProjectCatalog(projects.filter((project) => project.projectType !== "non-research"));
       const nonResearchProjects = [
         ...(Array.isArray(data.nonResearchProjects) ? data.nonResearchProjects : []),
