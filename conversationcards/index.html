@@ -29,7 +29,7 @@
 <div class="actions"><button class="primary" id="next">Reveal a question</button><button class="secondary" id="reset" aria-label="Restart and reshuffle all cards" title="Restart and reshuffle">↻</button></div>
 <div class="progress-row"><span id="count">0 of 35 questions</span><span id="remaining">35 little discoveries left</span></div><div class="track" role="progressbar" aria-label="Questions revealed" aria-valuemin="0" aria-valuemax="35" aria-valuenow="0" id="progress"><div class="fill" id="fill"></div></div><p class="helper" id="helper">One card, everyone answers. No rush, just us.</p>
 </section></div>
-<details><summary>How to play</summary><p>Tap the card to reveal a question. Go around the table and let everyone answer, or pass if they like. Choose “Next question” when you’re ready. All 35 questions appear once before you reshuffle. Your place is saved on this device when browser storage is available.</p></details>
+<details><summary>How to play</summary><p>Tap the card to reveal a question. Go around the table and let everyone answer, or pass if they like. Choose “Next question” when you’re ready. The deck has 18 thoughtful questions about gratitude and kindness, and 17 playful questions for giggles. All 35 questions appear once before you reshuffle. Your place is saved on this device when browser storage is available.</p></details>
 <p class="footer">Made for full hearts & happy tables <span aria-hidden="true">♥</span></p>
 <svg class="leaf-deco leaf-c" aria-hidden="true"><use href="#leaf"/></svg>
 <div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -38,43 +38,148 @@
 <script>
 'use strict';
 const QUESTIONS = [
-['Thankful hearts','What is one little thing that made you happy today?'],
-['Thankful hearts','Who helped you this week, and what did they do?'],
-['Thankful hearts','What is something you love about our family?'],
-['Thankful hearts','What is something in nature you are thankful for?'],
-['Thankful hearts','What is one thing your body helps you do that you enjoy?'],
-['Thankful hearts','What is something you learned this year that makes you proud?'],
-['Thankful hearts','Who would you like to say a big thank-you to?'],
-['Family stories','What is your favorite memory of us together?'],
-['Family stories','What is the funniest thing that happened to you this year?'],
-['Family stories','What family tradition would you like to start?'],
-['Family stories','What game should we all play together?'],
-['Family stories','If our family had a team name, what would it be?'],
-['Family stories','What is your favorite way to spend a rainy day together?'],
-['Family stories','What is something you would like to teach everyone here?'],
-['Silly little things','If a turkey could talk, what would it say today?'],
-['Silly little things','If you could invent a new pie, what would be inside?'],
-['Silly little things','Would you rather jump into leaves or splash in puddles? Why?'],
-['Silly little things','If you were a parade balloon, what would you look like?'],
-['Silly little things','What would you name a pet pumpkin?'],
-['Silly little things','If animals joined our dinner, which one would be the funniest guest?'],
-['Silly little things','If you had a silly superpower, what would it be?'],
-['Big imaginations','If you could visit any place, real or imaginary, where would you go?'],
-['Big imaginations','If you built a treehouse, what would you put inside?'],
-['Big imaginations','If you could spend a day with a story character, who would you choose?'],
-['Big imaginations','What would you invent to make someone’s day easier?'],
-['Big imaginations','If you could be any animal for a day, which would you be?'],
-['Big imaginations','What would the best playground in the world have?'],
-['Big imaginations','If you could give everyone a gift that costs nothing, what would it be?'],
-['Little favorites','Which food on the table would you give a gold medal?'],
-['Little favorites','What song makes you want to dance?'],
-['Little favorites','What book or movie would you like to share with us?'],
-['Little favorites','What is your favorite thing about autumn?'],
-['Little favorites','What is one kind thing we could do for someone tomorrow?'],
-['Little favorites','What is something new you would like to try?'],
-['Little favorites','What are you looking forward to doing together?']
+  [
+    "Thankful hearts",
+    "What are you most thankful for this year, and why?"
+  ],
+  [
+    "Thankful hearts",
+    "What is one little thing that made you happy today?"
+  ],
+  [
+    "Thankful hearts",
+    "Who helped you this year, and how did it make you feel?"
+  ],
+  [
+    "Thankful hearts",
+    "What does someone in our family do that you want to thank them for?"
+  ],
+  [
+    "Thankful hearts",
+    "What is something in nature you are thankful for?"
+  ],
+  [
+    "Thankful hearts",
+    "What is something you use every day that you are glad to have?"
+  ],
+  [
+    "Thankful hearts",
+    "What is a happy memory from this year that you are thankful for?"
+  ],
+  [
+    "Thankful hearts",
+    "Who would you like to thank, and what would you say?"
+  ],
+  [
+    "Kindness counts",
+    "What is a kind thing someone did for you this year?"
+  ],
+  [
+    "Kindness counts",
+    "What is a kind thing you did for someone this year?"
+  ],
+  [
+    "Kindness counts",
+    "How could you help someone who feels left out?"
+  ],
+  [
+    "Kindness counts",
+    "What is one way we could help someone together as a family?"
+  ],
+  [
+    "Kindness counts",
+    "What could you share with someone who needs it?"
+  ],
+  [
+    "A year of good",
+    "What good deed would you like to do next year?"
+  ],
+  [
+    "A year of good",
+    "What is one small step you could take to do that good deed?"
+  ],
+  [
+    "A year of good",
+    "What kind habit would you like to practice next year?"
+  ],
+  [
+    "A year of good",
+    "What would you like to learn next year so you can help someone?"
+  ],
+  [
+    "A year of good",
+    "What is something caring we could do for nature next year?"
+  ],
+  [
+    "Silly little things",
+    "If a turkey could talk, what would it say today?"
+  ],
+  [
+    "Silly little things",
+    "If you could invent a new pie, what would be inside?"
+  ],
+  [
+    "Silly little things",
+    "Would you rather jump into leaves or splash in puddles? Why?"
+  ],
+  [
+    "Silly little things",
+    "If you were a parade balloon, what would you look like?"
+  ],
+  [
+    "Silly little things",
+    "What would you name a pet pumpkin?"
+  ],
+  [
+    "Silly little things",
+    "If animals joined our dinner, which one would be the funniest guest?"
+  ],
+  [
+    "Silly little things",
+    "If you had a silly superpower, what would it be?"
+  ],
+  [
+    "Silly little things",
+    "Can you invent a funny turkey dance for everyone to try?"
+  ],
+  [
+    "Silly little things",
+    "What would happen if the mashed potatoes came to life?"
+  ],
+  [
+    "Big imaginations",
+    "If our family had a team name, what would it be?"
+  ],
+  [
+    "Big imaginations",
+    "If you built a treehouse, what silly room would you add?"
+  ],
+  [
+    "Big imaginations",
+    "Which story character would you invite to Thanksgiving dinner?"
+  ],
+  [
+    "Big imaginations",
+    "If you were a turkey for a day, what would you do?"
+  ],
+  [
+    "Big imaginations",
+    "What would a playground made of Thanksgiving food look like?"
+  ],
+  [
+    "Big imaginations",
+    "If your dessert could sing, what would its song be called?"
+  ],
+  [
+    "Big imaginations",
+    "Would you rather have spaghetti hair or pumpkin feet? Why?"
+  ],
+  [
+    "Big imaginations",
+    "If our family had a pet dragon, how would we include it in dinner?"
+  ]
 ];
-const KEY='gather-giggle-v1';
+const KEY='gather-giggle-v2';
 function shuffled(){const deck=QUESTIONS.map((_,i)=>i);for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}return deck;}
 function valid(s){return s&&Array.isArray(s.deck)&&s.deck.length===QUESTIONS.length&&new Set(s.deck).size===QUESTIONS.length&&s.deck.every(i=>Number.isInteger(i)&&i>=0&&i<QUESTIONS.length)&&Number.isInteger(s.seen)&&s.seen>=0&&s.seen<=QUESTIONS.length;}
 let state;try{const saved=JSON.parse(localStorage.getItem(KEY));if(valid(saved))state=saved;}catch{}
