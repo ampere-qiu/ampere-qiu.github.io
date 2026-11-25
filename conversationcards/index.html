@@ -61,7 +61,7 @@
 <div class="actions"><button class="secondary" id="previous" disabled>← Back</button><button class="primary" id="next" disabled>Next question →</button></div>
 <div class="progress-row"><span id="count">0 of 35 questions</span><span id="remaining">35 remaining</span></div><div class="track" role="progressbar" aria-label="Questions revealed" aria-valuemin="0" aria-valuemax="35" aria-valuenow="0" id="progress"><div class="fill" id="fill"></div></div>
 </section></div>
-<details><summary>How to play</summary><p>Tap a card to open it. Choose “Next question” to tuck it behind the deck, then tap the new face-down card. Use “Back” to revisit an earlier question. 18 thoughtful questions, 17 playful ones. No repeats in a round.</p></details>
+<details><summary>How to play</summary><p>Tap a card to open it. Choose “Next question” to tuck it behind the deck, then tap the new face-down card. Use “Back” to revisit an earlier question. 21 thoughtful questions, 14 playful ones. The mix favors switching between thoughtful and silly cards, with occasional repeats of a type. No repeated questions in a round.</p></details>
 <p class="credit">Credit: <a href="https://mondheera.website/">Mondheera (Ampere)</a> · Built with Codex</p>
 <svg class="leaf-deco leaf-c" aria-hidden="true"><use href="#leaf"/></svg>
 <div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -72,19 +72,15 @@
 const QUESTIONS = [
   [
     "Thankful hearts",
-    "What are you most thankful for this year, and why?"
+    "What are you most thankful for this year?"
   ],
   [
     "Thankful hearts",
-    "What is one little thing that made you happy today?"
+    "Who helped you this year? How?"
   ],
   [
     "Thankful hearts",
-    "Who helped you this year, and how did it make you feel?"
-  ],
-  [
-    "Thankful hearts",
-    "What does someone in our family do that you want to thank them for?"
+    "What do you love about our family?"
   ],
   [
     "Thankful hearts",
@@ -92,23 +88,23 @@ const QUESTIONS = [
   ],
   [
     "Thankful hearts",
-    "What is something you use every day that you are glad to have?"
+    "What do you use every day that you are glad to have?"
   ],
   [
     "Thankful hearts",
-    "What is a happy memory from this year that you are thankful for?"
+    "What happy memory from this year makes you smile?"
   ],
   [
     "Thankful hearts",
-    "Who would you like to thank, and what would you say?"
+    "Who would you like to thank? What would you say?"
   ],
   [
     "Kindness counts",
-    "What is a kind thing someone did for you this year?"
+    "What kind thing did someone do for you?"
   ],
   [
     "Kindness counts",
-    "What is a kind thing you did for someone this year?"
+    "What kind thing did you do for someone?"
   ],
   [
     "Kindness counts",
@@ -116,11 +112,19 @@ const QUESTIONS = [
   ],
   [
     "Kindness counts",
-    "What is one way we could help someone together as a family?"
+    "What could we do together to help someone?"
   ],
   [
     "Kindness counts",
     "What could you share with someone who needs it?"
+  ],
+  [
+    "Kindness counts",
+    "What is one way you can help at home?"
+  ],
+  [
+    "Kindness counts",
+    "How could you cheer up a friend who feels sad?"
   ],
   [
     "A year of good",
@@ -128,19 +132,27 @@ const QUESTIONS = [
   ],
   [
     "A year of good",
-    "What is one small step you could take to do that good deed?"
+    "What small kind thing could you do tomorrow?"
   ],
   [
     "A year of good",
-    "What kind habit would you like to practice next year?"
+    "Who would you like to help next year?"
   ],
   [
     "A year of good",
-    "What would you like to learn next year so you can help someone?"
+    "What could you do to care for nature next year?"
   ],
   [
     "A year of good",
-    "What is something caring we could do for nature next year?"
+    "What kind thing would you like to do more often?"
+  ],
+  [
+    "A year of good",
+    "What could you give someone that costs no money?"
+  ],
+  [
+    "A year of good",
+    "What kind thing could our family do together next year?"
   ],
   [
     "Silly little things",
@@ -149,10 +161,6 @@ const QUESTIONS = [
   [
     "Silly little things",
     "If you could invent a new pie, what would be inside?"
-  ],
-  [
-    "Silly little things",
-    "Would you rather jump into leaves or splash in puddles? Why?"
   ],
   [
     "Silly little things",
@@ -188,15 +196,7 @@ const QUESTIONS = [
   ],
   [
     "Big imaginations",
-    "Which story character would you invite to Thanksgiving dinner?"
-  ],
-  [
-    "Big imaginations",
     "If you were a turkey for a day, what would you do?"
-  ],
-  [
-    "Big imaginations",
-    "What would a playground made of Thanksgiving food look like?"
   ],
   [
     "Big imaginations",
@@ -211,9 +211,25 @@ const QUESTIONS = [
     "If our family had a pet dragon, how would we include it in dinner?"
   ]
 ];
-const KEY='gather-giggle-v2';
+const KEY='gather-giggle-v3';
 const TOTAL=QUESTIONS.length;
-function shuffled(){const deck=QUESTIONS.map((_,i)=>i);for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}return deck;}
+const THOUGHTFUL_CATEGORIES=new Set(['Thankful hearts','Kindness counts','A year of good']);
+function isThoughtful(index){return THOUGHTFUL_CATEGORIES.has(QUESTIONS[index][0]);}
+function shuffled(){
+  const pools=[[],[]];
+  QUESTIONS.forEach((_,i)=>pools[isThoughtful(i)?0:1].push(i));
+  // Randomize the questions within each type independently.
+  for(const pool of pools){for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}}
+  const deck=[];let last=-1;
+  while(pools[0].length||pools[1].length){
+    // Prefer changing type; remaining-card weights keep both types spread across the round.
+    // Repeating a type still has positive probability whenever its pool has cards.
+    const weights=pools.map((pool,type)=>pool.length*(type===last?0.45:1));
+    const type=Math.random()*(weights[0]+weights[1])<weights[0]?0:1;
+    deck.push(pools[type].pop());last=type;
+  }
+  return deck;
+}
 function valid(s){return s&&Array.isArray(s.deck)&&s.deck.length===TOTAL&&new Set(s.deck).size===TOTAL&&s.deck.every(i=>Number.isInteger(i)&&i>=0&&i<TOTAL)&&Number.isInteger(s.seen)&&s.seen>=0&&s.seen<=TOTAL&&(s.faceUp===undefined||typeof s.faceUp==='boolean')&&!(s.faceUp===true&&s.seen===0)&&(s.cursor===undefined||(Number.isInteger(s.cursor)&&s.cursor>=0&&s.cursor<TOTAL&&s.cursor<=s.seen&&!(s.faceUp&&s.cursor>=s.seen)))&&!(s.cursor===undefined&&s.faceUp===false&&s.seen===TOTAL);}
 let state;try{const saved=JSON.parse(localStorage.getItem(KEY));if(valid(saved)){const faceUp=saved.faceUp??saved.seen>0;state={...saved,faceUp,cursor:saved.cursor??Math.max(0,saved.seen-(faceUp?1:0))};}}catch{}
 if(!state)state={deck:shuffled(),seen:0,faceUp:false,cursor:0};
