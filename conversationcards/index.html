@@ -58,7 +58,7 @@
 <svg class="mascot pie" viewBox="0 0 220 190" aria-hidden="true"><use href="#pie"/></svg>
 <section class="game" aria-label="Conversation card game">
 <div class="card-wrap"><div class="waiting-card front" aria-hidden="true"><svg class="turkey" viewBox="0 0 200 180"><use href="#turkey"/></svg><span class="front-title">Let’s talk turkey.</span><span class="tap">Tap to open</span></div><div class="card-motion" id="card-motion"><button class="card" id="card" aria-label="Flip to reveal your first question" aria-pressed="false"><span class="face front" id="front"><svg class="turkey" viewBox="0 0 200 180" aria-hidden="true"><use href="#turkey"/></svg><span class="front-title">Let’s talk turkey.</span><span class="tap">Tap to open</span></span><span class="face back" id="back" aria-hidden="true"><svg class="little-leaf" aria-hidden="true"><use href="#leaf"/></svg><span class="category" id="category"></span><span class="question" id="question"></span></span></button></div></div>
-<div class="actions"><button class="secondary" id="previous" disabled>Back</button><button class="primary" id="next" disabled>Next question</button></div>
+<div class="actions"><button class="secondary" id="previous" disabled>← Back</button><button class="primary" id="next" disabled>Next question →</button></div>
 <div class="progress-row"><span id="count">0 of 35 questions</span><span id="remaining">35 remaining</span></div><div class="track" role="progressbar" aria-label="Questions revealed" aria-valuemin="0" aria-valuemax="35" aria-valuenow="0" id="progress"><div class="fill" id="fill"></div></div>
 </section></div>
 <details><summary>How to play</summary><p>Tap a card to open it. Choose “Next question” to tuck it behind the deck, then tap the new face-down card. Use “Back” to revisit an earlier question. 18 thoughtful questions, 17 playful ones. No repeats in a round.</p></details>
@@ -230,7 +230,7 @@ function render(){
   card.setAttribute('aria-pressed',String(revealed));
   el('front').setAttribute('aria-hidden',String(revealed));
   el('back').setAttribute('aria-hidden',String(!revealed));
-  el('next').textContent=state.cursor===TOTAL-1?'Play again':'Next question';
+  el('next').textContent=state.cursor===TOTAL-1?'Play again':'Next question →';
   el('next').disabled=busy||!revealed;
   card.disabled=busy;
   el('previous').disabled=busy||state.cursor===0;
